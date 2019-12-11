@@ -1,4 +1,5 @@
-![](docs/images/ILlogo.png)
+![](docs/images/CompanyLogo.png)
+*Feel free to change the company logo under `docs/images/CompanyLogo.png`*
 
 # {{cookiecutter.project_name}}
 
