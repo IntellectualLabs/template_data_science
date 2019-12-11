@@ -4,6 +4,10 @@
 
 {{cookiecutter.project_description}}
 
+## Purpose
+
+*Explain the purpose of your repository/project here*
+
 
 ## Setup
 
