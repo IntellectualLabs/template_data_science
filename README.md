@@ -96,6 +96,8 @@ Depending upon the selected options when creating the project, the generated str
 │   └── temp                 <- Temporary files.
 │
 ├── docs                     <- Documentation
+│   ├── images               <- Image files for documentation
+│   │   └── ILlogo.png       <- Intellectual Labs logo
 │   └── writeup              <- Sphinx project for project writeup including auto generated API.
 │       ├── conf.py          <- Sphinx configurtation file.
 │       ├── index.rst        <- Start page.

@@ -1,3 +1,5 @@
+![](docs/images/ILlogo.png)
+
 # {{cookiecutter.project_name}}
 
 {{cookiecutter.project_description}}
@@ -41,70 +43,6 @@ reflected immediately:
     ```
 
 
-## Initial File Structure
-
-```
-├── .gitignore               <- Files that should be ignored by git. Add seperate .gitignore files in sub folders if 
-│                               needed
-├── conda_env.yml            <- Conda environment definition for ensuring consistent setup across environments
-├── LICENSE
-├── README.md                <- The top-level README for developers using this project.
-├── requirements.txt         <- The requirements file for reproducing the analysis environment, e.g.
-│                               generated with `pip freeze > requirements.txt`. Might not be needed if using conda.
-├── setup.py                 <- Metadata about your project for easy distribution.
-│
-├── application              <- Application
-│   ├── dashwebapp           <- Application template using dash
-│   │   ├── assets           <- Web tech asset files; css layout files and js
-│   │   │   └── header.css   <- Layout css file for header
-│   │   └── app.py           <- Application file
-│   └── webapp               <- Application template using flask
-│       ├── Graph            <- Text files with some html graphs
-│       ├── static           <- Static files, e.g. pdfs
-│       ├── templates        <- Template files
-│       │   └── layouts      <- Layout files
-│       │      └── index.html  <- Example index html file
-│       └── app.py           <- Application file
-│
-├── data
-│   ├── interim_[desc]       <- Interim files - give these folders whatever name makes sense.
-│   ├── processed            <- The final, canonical data sets for modeling.
-│   ├── raw                  <- The original, immutable data dump.
-│   └── temp                 <- Temporary files.
-│
-├── docs                     <- Documentation
-│   └── writeup              <- Sphinx project for project writeup including auto generated API.
-│       ├── conf.py          <- Sphinx configurtation file.
-│       ├── index.rst        <- Start page.
-│       ├── make.bat         <- For generating documentation (Windows)
-│       └── Makefile         <- For generating documentation (make)
-│
-├── extras                   <- Miscellaneous extras.
-│   └── add_explorer_context_shortcuts.reg    <- Adds additional Windows Explorer context menus for starting jupyter.
-│
-├── notebooks                <- Notebooks for analysis and testing
-│   ├── eda                  <- Notebooks for EDA
-│   ├── features             <- Notebooks for generating and analysing features (1 per feature)
-│   ├── modelling            <- Notebooks for modelling
-│   └── preprocessing        <- Notebooks for Preprocessing 
-│
-├── scripts                  <- Standalone scripts
-│   └── example.py           <- Example script
-│
-├── src                      <- Code for use in this project.
-│   └── {{cookiecutter.package_name}}       <- Example python package - place shared code in such a package
-│       ├── __init__.py      <- Python package initialisation
-│       ├── examplemodule.py <- Example module with functions and naming / commenting best practices
-│       ├── features.py      <- Feature engineering functionality
-│       ├── io.py            <- IO functionality
-│       └── pipeline.py      <- Pipeline functionality
-│
-└── tests                    <- Test cases (named after module)
-    ├── test_notebook.py     <- Example testing that Jupyter notebooks run without errors
-    └── {{cookiecutter.package_name}}       <- {{cookiecutter.package_name}} tests
-        └── examplemodule    <- examplemodule tests (1 file per method tested)
-```
-
 ## Testing
 
 Reproducability and the correct functioning of code are essential to avoid wasted time. 
@@ -116,8 +54,11 @@ To run tests, install `pytest` using pip or conda (should have been setup alread
 you used the `conda_env.yml` file) and then from the repository root run
  
 ```bash
-pytest
+pytest --cov
 ```
+
+This will also display test coverage.
+
 
 ## Automated Document Generation
 
