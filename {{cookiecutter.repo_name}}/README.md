@@ -53,6 +53,19 @@ reflected immediately:
 │                               generated with `pip freeze > requirements.txt`. Might not be needed if using conda.
 ├── setup.py                 <- Metadata about your project for easy distribution.
 │
+├── application              <- Application
+│   ├── dashwebapp           <- Application template using dash
+│   │   ├── assets           <- Web tech asset files; css layout files and js
+│   │   │   └── header.css   <- Layout css file for header
+│   │   └── app.py           <- Application file
+│   └── webapp               <- Application template using flask
+│       ├── Graph            <- Text files with some html graphs
+│       ├── static           <- Static files, e.g. pdfs
+│       ├── templates        <- Template files
+│       │   └── layouts      <- Layout files
+│       │      └── index.html  <- Example index html file
+│       └── app.py           <- Application file
+│
 ├── data
 │   ├── interim_[desc]       <- Interim files - give these folders whatever name makes sense.
 │   ├── processed            <- The final, canonical data sets for modeling.
@@ -60,28 +73,23 @@ reflected immediately:
 │   └── temp                 <- Temporary files.
 │
 ├── docs                     <- Documentation
-│   ├── data_science_code_of_conduct.md  <- Code of conduct.
-│   ├── process_documentation.md         <- Standard template for documenting process and decisions.
 │   └── writeup              <- Sphinx project for project writeup including auto generated API.
-│      ├── conf.py           <- Sphinx configurtation file.
-│      ├── index.rst         <- Start page.
-│      ├── make.bat          <- For generating documentation (Windows)
-│      └── Makefile          <- For generating documentation (make)
-│
-├── examples                 <- Add folders as needed e.g. examples, eda, use case
+│       ├── conf.py          <- Sphinx configurtation file.
+│       ├── index.rst        <- Start page.
+│       ├── make.bat         <- For generating documentation (Windows)
+│       └── Makefile         <- For generating documentation (make)
 │
 ├── extras                   <- Miscellaneous extras.
 │   └── add_explorer_context_shortcuts.reg    <- Adds additional Windows Explorer context menus for starting jupyter.
 │
 ├── notebooks                <- Notebooks for analysis and testing
 │   ├── eda                  <- Notebooks for EDA
-│   │   └── example.ipynb    <- Example python notebook
 │   ├── features             <- Notebooks for generating and analysing features (1 per feature)
 │   ├── modelling            <- Notebooks for modelling
 │   └── preprocessing        <- Notebooks for Preprocessing 
 │
 ├── scripts                  <- Standalone scripts
-│   └── example.py           <- Example sctipt
+│   └── example.py           <- Example script
 │
 ├── src                      <- Code for use in this project.
 │   └── {{cookiecutter.package_name}}       <- Example python package - place shared code in such a package
@@ -94,10 +102,7 @@ reflected immediately:
 └── tests                    <- Test cases (named after module)
     ├── test_notebook.py     <- Example testing that Jupyter notebooks run without errors
     └── {{cookiecutter.package_name}}       <- {{cookiecutter.package_name}} tests
-        ├── examplemodule    <- examplemodule tests (1 file per method tested)
-        ├── features         <- features tests
-        ├── io               <- io tests
-        └── pipeline         <- pipeline tests
+        └── examplemodule    <- examplemodule tests (1 file per method tested)
 ```
 
 ## Testing
