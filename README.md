@@ -26,7 +26,7 @@ pip install -U cookiecutter
 Then generate a new project for your own use based upon the template, answering the questions to customise the generated project:
 
 ```bash
-cookiecutter https://github.com/equinor/data-science-template.git
+cookiecutter https://github.com/IntellectualLabs/data_science_template
 ```
 
 The values you are prompted for are:

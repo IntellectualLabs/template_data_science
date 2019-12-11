@@ -29,28 +29,6 @@ app = dash.Dash(__name__)
 # external_scripts=external_scripts,
 # external_stylesheets=external_stylesheets)
 
-
-app.index_string = """
-<!DOCTYPE html>
-<html>
-    <head>
-        {%metas%}
-        <title>Web app UI test</title>
-        {%favicon%}
-        {%css%}
-    </head>
-    <body>        
-        {%app_entry%}
-        <footer>
-            {%config%}
-            {%scripts%}
-            {%renderer%}
-        </footer>
-        <div>Made in Intellectual Labs</div>
-    </body>
-</html>
-"""
-
 app.layout = html.Div(
     children=[
         html.Div(
