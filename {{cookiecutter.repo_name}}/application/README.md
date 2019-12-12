@@ -9,7 +9,7 @@ It also contains a basic dash template for the same app purpose.
 
 The files are under webapp. `app.py` is the main entry point and will server up the template file `index.html`. Both these files should be customised as needed. You can choose to embed html to display static images or have this generated from python code. The default template uses tabs to swap between content. You can and expand upon the sample to serve multiple pages if so desired. This might be necessary for grouping content or with high memory content.
 
-To run the flask app, change to teh webapp folder and type:
+To run the flask app, change to the webapp folder and type:
 
 ```bash
 python app.py

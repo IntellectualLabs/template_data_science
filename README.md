@@ -136,7 +136,6 @@ Depending upon the selected options when creating the project, the generated str
 
 * https://github.com/Statoil/data-science-template/
 * http://docs.python-guide.org/en/latest/writing/structure/
-* https://github.com/Azure/Microsoft-TDSP
 * https://drivendata.github.io/cookiecutter-data-science/
 * https://github.com/audreyr/cookiecutter-pypackage
 
