@@ -46,6 +46,8 @@ reflected immediately:
 
 ## Run API
 
+### Option 1: Run API locally
+
 To run the API in `application/app.py`, with `root` as working directory run:
 
 ```bash
@@ -61,7 +63,7 @@ which autogenerates API documentation with both Swagger and ReDoc;
 1. For Swagger UI API documentation go to http://127.0.0.1:4242/docs
 2. For ReDoc UI API documentation go to http://127.0.0.1:4242/redoc
 
-## Run API in docker
+### Option 2: Run API in docker
 
 1. Install [Docker](https://www.docker.com/products/docker-desktop)
 2. With `root` as working directory, build docker image by:
