@@ -73,8 +73,6 @@ Depending upon the selected options when creating the project, the generated str
 ├── Dockerfile               <- File defining how to build the docker image
 ├── LICENSE
 ├── README.md                <- The top-level README for developers using this project.
-├── requirements.txt         <- The requirements file for reproducing the analysis environment, e.g.
-│                               generated with `pip freeze > requirements.txt`. Might not be needed if using conda.
 ├── setup.py                 <- Metadata about your project for easy distribution.
 │
 ├── application              <- Application
