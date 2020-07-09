@@ -1,48 +1,10 @@
-## The .gitignore file specifies things that git should ignore. 
+## The .gitignore file specifies things that git should ignore.
 ## This default template includes entries for R, Python and visual studio
 
 ##
 ## Add custom entries below here.
 ##
 
-
-##
-## R Section - See https://github.com/github/gitignore/blob/master/R.gitignore
-##
-
-# History files
-.Rhistory
-.Rapp.history
-
-# Session Data files
-.RData
-
-# Example code in package build process
-*-Ex.R
-
-# Output files from R CMD build
-/*.tar.gz
-
-# Output files from R CMD check
-/*.Rcheck/
-
-# RStudio files
-.Rproj.user/
-
-# produced vignettes
-vignettes/*.html
-vignettes/*.pdf
-
-# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
-.httr-oauth
-
-# knitr and R markdown default cache directories
-/*_cache/
-/cache/
-
-# Temporary files created by R markdown
-*.utf8.md
-*.knit.md
 
 ##
 ## Python Section - See https://github.com/github/gitignore/blob/master/Python.gitignore
@@ -179,8 +141,10 @@ bld/
 [Oo]bj/
 [Ll]og/
 
-# Visual Studio 2015 cache/options directory
+# Visual Studio 2015 cache/options directory and VS Code
 .vs/
+.vscode/
+*.code-workspace
 # Uncomment if you have tasks that create the project's static files in wwwroot
 #wwwroot/
 
