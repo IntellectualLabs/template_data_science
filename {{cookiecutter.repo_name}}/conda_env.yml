@@ -3,6 +3,7 @@ channels:
   - default
   - conda-forge
 dependencies:
+  - python=3.8
   - ipykernel
   - numpy
   - nbconvert
@@ -12,6 +13,7 @@ dependencies:
   - pytest
   - pytest-cookies
   - pytest-cov
+  - pytest-remotedata==0.3.2  # https://github.com/pytest-dev/pytest/issues/4608#issuecomment-624438127
   - pip:
     - fastapi
     - flake8

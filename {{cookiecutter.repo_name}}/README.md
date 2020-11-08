@@ -90,14 +90,23 @@ If a code block is copied more than once then it should be placed into a
 common script / module under `src/` and unit tests added. The same applies for
 any other non trivial code to ensure the correct functioning.
 
-To run tests, install `pytest` using pip or conda (should have been setup already if
-you used the `conda_env.yml` file) and then from the repository root run
+To run tests, ensure you have installed the conda environment as explained above
+(from `conda_env.yml`) and activated it.
+*If not, install `pytest`, `pytest-cookies`, `pytest-cov`,
+`pytest-remotedata==0.3.2` using pip or conda.*
+Then from the repository root run
 
 ```bash
-pytest --cov
+pytest tests\
 ```
 
-This will also display test coverage.
+To display test coverage of all source code in the folder `src/` run from repository root
+
+```bash
+pytest --cov-report term-missing --cov=src tests/
+```
+
+For more details, see the README in the folder `tests\`.
 
 
 ## Automated Document Generation
