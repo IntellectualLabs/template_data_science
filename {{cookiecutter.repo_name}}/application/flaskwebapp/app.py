@@ -17,11 +17,12 @@ def index():
 
 
 if __name__ == '__main__':
-    graph_path = 'Graph\\'
+    graph_path = 'Graph/'
     graph_files = [f for f in listdir(graph_path) if isfile(join(graph_path, f))]
     for graph_file in graph_files:
         file = open(graph_path + graph_file, 'r')
         graph_dict[graph_file.split('.')[0]] = HTML(file.read())
-        print(graph_dict[graph_file.split('.')[0]])
+        #print(graph_dict[graph_file.split('.')[0]])
+        print(graph_path + graph_file)
 
     app.run(host='127.0.0.1', port=8889)

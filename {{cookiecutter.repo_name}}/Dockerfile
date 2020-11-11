@@ -37,7 +37,7 @@ RUN echo "Make sure {{cookiecutter.package_name}} is installed:" && \
     python -c "import {{cookiecutter.package_name}}"
 
 # The code to run when container is started:
-COPY application/app.py app.py
+COPY application/fastapiwebapp/app.py app.py
 
 # Add some labels
 LABEL maintainer="{{cookiecutter.author}}"
