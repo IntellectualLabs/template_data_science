@@ -8,8 +8,19 @@ Feel free to change the company logo under `docs/images/CompanyLogo.png`*
 
 *Explain the purpose of your repository/project here*
 
+<!-- TOC -->
+- [1. Setup](#1-setup)
+- [2. Run API](#2-run-api)
+    - [2.1. Option 1: Run API locally](#21-option-1-run-api-locally)
+    - [2.2. Option 2: Run API in docker](#22-option-2-run-api-in-docker)
+    - [2.3. Option 3: Run API with docker-compose](#23option-3-run-api-with-docker-compose)
+- [3. Testing](#3-testing)
+- [4. Automated Document Generation](#4-automated-document-generation)
+- [5. References](#5-references)
+<!-- /TOC -->
 
-## Setup
+
+## 1. Setup
 
 1. Install git and checkout the [git code repository]
 2. Install [anaconda] python version 3.6+
@@ -44,14 +55,18 @@ reflected immediately:
     ```
 
 
-## Run API
+## 2. Run API
 
-### Option 1: Run API locally
+In the folder `application/ `, three templates to create web apps and web APIs using Python
+are given; using frameworks 1) FastAPI, 2) Dash, 3) Flask. Here we show how to run the
+API using FastAPI, with source code in `application/fastapiwebapp/`.
 
-To run the API in `application/app.py`, with `root` as working directory run:
+### 2.1. Option 1: Run API locally
+
+To run the API in `application/fastapiwebapp/app.py`, with `root` as working directory run:
 
 ```bash
-(cd application/ && uvicorn app:app --reload --port 4242)
+(cd application/fastapiwebapp/ && uvicorn app:app --reload --port 4242)
 ```
 
 This will run the server and host the api locally on port 4242;
@@ -63,7 +78,7 @@ which autogenerates API documentation with both Swagger and ReDoc;
 1. For Swagger UI API documentation go to http://127.0.0.1:4242/docs
 2. For ReDoc UI API documentation go to http://127.0.0.1:4242/redoc
 
-### Option 2: Run API in docker
+### 2.2. Option 2: Run API in docker
 
 1. Install [Docker](https://www.docker.com/products/docker-desktop)
 2. With `root` as working directory, build docker image by:
@@ -83,7 +98,30 @@ which autogenerates API documentation with both Swagger and ReDoc;
 docker exec -it {{cookiecutter.project_name.lower().replace(' ', '_')}}_api /bin/bash
 ```
 
-## Testing
+### 2.3. Option 3: Run API with docker-compose
+
+1. Install [Docker](https://www.docker.com/products/docker-desktop)
+2. With `root` as working directory, build docker image by:
+    ```bash
+    docker-compose -f .\docker-compose-dev.yml --verbose up
+    ```
+    Note that this can take several minutes.
+
+    This will build the docker image `{{cookiecutter.repo_name}}:latest`
+    and spin up a running container on [localhost:8081](localhost:8081) from it for the API.
+3. For API documentation (built automatically by FastAPI), go to
+    - [localhost:5000/docs](localhost:5000/docs) for documentation provided by Swagger
+    - [localhost:5000/redoc](localhost:5000/redoc) for documentation provided by ReDoc
+
+The benefit with running with `docker-compose` is that this is set up to *mount the full repo into the container*,
+i.e. all content in the repo (including data and config files) on your local machine (host)
+will be mirrored into the container.
+Hence any change you make to the source code on your local machine will be automatically
+mirrored/changed inside the container as well.
+The API is set up to reload when it detects changes, hence all changes to the app
+and source code will automatically be available in the running API on [localhost:8081](localhost:8081).
+
+## 3. Testing
 
 Reproducability and the correct functioning of code are essential to avoid wasted time.
 If a code block is copied more than once then it should be placed into a
@@ -109,7 +147,7 @@ pytest --cov-report term-missing --cov=src tests/
 For more details, see the README in the folder `tests\`.
 
 
-## Automated Document Generation
+## 4. Automated Document Generation
 
 A [sphinx](https://www.sphinx-doc.org/) project is provided under `docs/writeup/` that will generate writeup that
 also includes automatically generated API information for any packages. The output can be created in multiple
@@ -123,7 +161,7 @@ make html
 
 On Windows this will run the `make.bat`, a Makefile is also included for those using the `make` command.
 
-## References
+## 5. References
 
 * https://github.com/IntellectualLabs/data_science_template
 * http://docs.python-guide.org/en/latest/writing/structure/

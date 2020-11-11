@@ -1,0 +1,30 @@
+# For full ref how to build the docker-compose files, see
+#     https://docs.docker.com/compose/compose-file/
+# 'version' specifies which version of docker-compose to use
+version: '3'
+
+# "services" almost equals "which containers"
+services:
+    {{cookiecutter.repo_name}}:
+        # Specify which dockerfile to build from
+        build:
+          context: .
+          dockerfile: Dockerfile
+
+          # Name docker image
+        image: {{cookiecutter.repo_name}}:latest
+
+        # Specify port mappings (which ports to expose out of the container)
+        ports:
+          - "8081:80"
+
+        # Specify which host/local volumes (folders) to map into the container and where
+        volumes:
+          # Map parent directory, i.e. whole {{cookiecutter.repo_name}} repo folder, to /app in container
+          - ".:/app"
+
+        # Specify restart policy; {always, on-failure, unless-stopped}
+        restart: always
+
+        # Specify which is executed when container is initiated, i.e. on "docker-compose run"
+        command: uvicorn app:app --host 0.0.0.0 --port 80 --reload
