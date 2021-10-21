@@ -9,19 +9,59 @@ Feel free to change the company logo under `docs/images/CompanyLogo.png`*
 *Explain the purpose of your repository/project here*
 
 <!-- TOC -->
-- [1. Setup](#1-setup)
-- [2. Run API](#2-run-api)
+- [{{cookiecutter.project_name}}](#cookiecutterproject_name)
+  - [1. Setup](#1-setup)
+    - [1.1 Poetry](#11-poetry)
+      - [1.2.1 Installation issues](#121-installation-issues)
+    - [1.2 Conda](#12-conda)
+  - [2. Run API](#2-run-api)
     - [2.1. Option 1: Run API locally](#21-option-1-run-api-locally)
     - [2.2. Option 2: Run API in docker](#22-option-2-run-api-in-docker)
-    - [2.3. Option 3: Run API with docker-compose](#23option-3-run-api-with-docker-compose)
-- [3. Testing](#3-testing)
-- [4. Automated Document Generation](#4-automated-document-generation)
-- [5. References](#5-references)
+    - [2.3. Option 3: Run API with docker-compose](#23-option-3-run-api-with-docker-compose)
+  - [3. Testing](#3-testing)
+  - [4. Automated Document Generation](#4-automated-document-generation)
+  - [5. References](#5-references)
 <!-- /TOC -->
 
 
 ## 1. Setup
 
+### 1.1 Poetry
+
+1. Install [Poetry]: <https://python-poetry.org/docs/#installation>
+2. Change working directory into the git code repository root
+3. Create the self contained environment;
+    - Initialize the environment file `poetry init`.
+        - If the env file `pyproject.toml` already exists ignore this step.
+    - Create the env `poetry install`
+    - Activate poetry shell `poetry shell`
+    - Add packages by `poetry add <package>`.
+        - add package as dev package `--dev (-D)`
+        - install without dev dependencies `poetry install --no-dev`
+    - Add this under `[tool.poetry]`
+
+        ```toml
+        [tool.poetry]
+        ...
+        packages = [
+            { include = "{{cookiecutter.project_name.lower().replace(' ', '_')}}", from = "src"},
+        ]
+        ```
+
+    - Add ipykernel to dev
+
+        ```bash
+        poetry add -D ipykernel
+        ```
+
+    - Update poetry.lock without upgrading dependencies: `poetry lock --no-update`
+#### 1.2.1 Installation issues
+- If you have any issues installing any python packages
+    - especially wheels, try to update pip: `pip install --upgrade pip`
+    - Or try upgrading your poetry version: `poetry self update`
+
+
+### 1.2 Conda
 1. Install git and checkout the [git code repository]
 2. Install [anaconda] python version 3.6+
 3. Change working directory into the git code repository root
