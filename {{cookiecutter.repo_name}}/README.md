@@ -27,6 +27,8 @@ _Explain the purpose of your repository/project here_
 
 ## 1. Setup
 
+1. Install git and checkout the [git code repository]
+
 ### 1.1 Poetry
 
 1. Install [Poetry]: <https://python-poetry.org/docs/#installation>
@@ -66,10 +68,9 @@ _Explain the purpose of your repository/project here_
 
 ### 1.2 Conda
 
-1.  Install git and checkout the [git code repository]
-2.  Install [anaconda] python version 3.6+
-3.  Change working directory into the git code repository root
-4.  Create the self contained conda environment;
+1.  Install [anaconda] python version 3.6+
+2.  Change working directory into the git code repository root
+3.  Create the self contained conda environment;
 
     - Add other necessary packages to `conda_env.yml` under dependencies.
     - Go to the git code repository root and enter the command:
@@ -77,6 +78,12 @@ _Explain the purpose of your repository/project here_
       ```bash
       conda env create --file conda_env.yml
       ```
+
+      - To update run
+
+        ```bash
+        conda env update --file conda_env.yml  --prune
+        ```
 
     - Activate the conda environment:
 
@@ -91,16 +98,20 @@ _Explain the purpose of your repository/project here_
       python -m ipykernel install --user --name {{cookiecutter.project_name.lower().replace(' ', '_')}} --display-name "Python ({{cookiecutter.project_name.lower().replace(' ', '_')}})"
       ```
 
-5.  Any python modules under folder `src/` need to be available to other scripts.
+4.  Any python modules under folder `src/` need to be available to other scripts.
     Install the module locally (in developer mode) in your conda environment with modifications
     reflected immediately:
 
-        ```bash
+    ```bash
 
     pip install -e .
 
     ```
 
+5.  Update `requirements.txt`
+
+    ```bash
+    conda list -e > requirements.txt
     ```
 
 ## 2. Run API
