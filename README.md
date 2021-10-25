@@ -37,6 +37,7 @@ The values you are prompted for are:
 | repo_name           | The name of the github repository where the project will be held    |
 | package_name        | A name for the generated python package.                            |
 | author              | The main author of the solution. Included in the setup.py file      |
+| python_package_manager | Which Python package manager to use ("conda" or "poetry")        |
 | open_source_license | What type of open source license the project will be released under |
 
 If you are uncertain about what to enter for any value then just accept the defaults.
@@ -67,9 +68,10 @@ Depending upon the selected options when creating the project, the generated str
 ```
 ├── .gitignore               <- Files ignored by git. Add seperate .gitignore files in sub folders if needed
 ├── .dockerignore            <- Files that should be ignored when building the docker image from Dockerfile
-├── conda_env.yml            <- Conda environment definition for ensuring consistent setup across environments
+├── conda_env.yml            <- Conda env definition (if conda is selected as package manager)
 ├── Dockerfile               <- File defining how to build the docker image
 ├── LICENSE
+├── pyproject.toml           <- Poetry env definition (if poetry is selected as package manager)
 ├── README.md                <- The top-level README for developers using this project.
 ├── setup.py                 <- Metadata about your project for easy distribution.
 │

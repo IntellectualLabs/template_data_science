@@ -12,10 +12,8 @@ _Explain the purpose of your repository/project here_
 <!-- TOC -->
 
 - [{{cookiecutter.project_name}}](#cookiecutterproject_name)
-  - [1. Setup](#1-setup)
-    - [1.1 Poetry](#11-poetry)
-      - [1.2.1 Installation issues](#121-installation-issues)
-    - [1.2 Conda](#12-conda)
+  - [1. Setup](#1-setup){% if cookiecutter.python_package_manager == 'poetry' %}
+      - [1.1 Installation issues](#121-installation-issues){% endif %}
   - [2. Run API](#2-run-api)
     - [2.1. Option 1: Run API locally](#21-option-1-run-api-locally)
     - [2.2. Option 2: Run API in docker](#22-option-2-run-api-in-docker)
@@ -26,51 +24,35 @@ _Explain the purpose of your repository/project here_
   <!-- /TOC -->
 
 ## 1. Setup
+{% if cookiecutter.python_package_manager == 'poetry' %}
+*The setup shows how to set up your environment with the `poetry` python package manager*.
 
-1. Install git and checkout the [git code repository]
+1. Install git and checkout the [git code repository](https://github.com/IntellectualLabs/template_data_science/).
+2. Install [Poetry]: <https://python-poetry.org/docs/#installation>
+3. Change working directory into the git code repository root
+4. Create the self contained environment;
 
-### 1.1 Poetry
-
-1. Install [Poetry]: <https://python-poetry.org/docs/#installation>
-2. Change working directory into the git code repository root
-3. Create the self contained environment;
-
-   - Initialize the environment file `poetry init`.
-     - If the env file `pyproject.toml` already exists ignore this step.
+   - *(If the config file `pyproject.toml` does not exist, initialize the environment file `poetry init`.)*
    - Create the env `poetry install`
    - Activate poetry shell `poetry shell`
    - Add packages by `poetry add <package>`.
-     - add package as dev package `--dev (-D)`
+     - add package as dev package `--dev (-D)`, e.g. `poetry add -D ipykernel` (*already included*)
      - install without dev dependencies `poetry install --no-dev`
-   - Add this under `[tool.poetry]`
+   - Update `poetry.lock` without upgrading dependencies: `poetry lock --no-update`
 
-     ```toml
-     [tool.poetry]
-     ...
-     packages = [
-         { include = "{{cookiecutter.project_name.lower().replace(' ', '_')}}", from = "src"},
-     ]
-     ```
-
-   - Add ipykernel to dev
-
-     ```bash
-     poetry add -D ipykernel
-     ```
-
-   - Update poetry.lock without upgrading dependencies: `poetry lock --no-update`
-
-#### 1.2.1 Installation issues
+#### 1.1 Installation issues
 
 - If you have any issues installing any python packages
   - especially wheels, try to update pip: `pip install --upgrade pip`
   - Or try upgrading your poetry version: `poetry self update`
 
-### 1.2 Conda
+{% elif cookiecutter.python_package_manager == 'conda' %}
+*The setup shows how to set up your environment with the `conda` python package manager*.
 
-1.  Install [anaconda] python version 3.6+
-2.  Change working directory into the git code repository root
-3.  Create the self contained conda environment;
+1. Install git and checkout the [git code repository](https://github.com/IntellectualLabs/template_data_science/).
+2.  Install [anaconda] python version 3.8+
+3.  Change working directory into the git code repository root
+4.  Create the self contained conda environment;
 
     - Add other necessary packages to `conda_env.yml` under dependencies.
     - Go to the git code repository root and enter the command:
@@ -98,7 +80,7 @@ _Explain the purpose of your repository/project here_
       python -m ipykernel install --user --name {{cookiecutter.project_name.lower().replace(' ', '_')}} --display-name "Python ({{cookiecutter.project_name.lower().replace(' ', '_')}})"
       ```
 
-4.  Any python modules under folder `src/` need to be available to other scripts.
+5.  Any python modules under folder `src/` need to be available to other scripts.
     Install the module locally (in developer mode) in your conda environment with modifications
     reflected immediately:
 
@@ -108,11 +90,12 @@ _Explain the purpose of your repository/project here_
 
     ```
 
-5.  Update `requirements.txt`
+6.  (*Optional*) Update `requirements.txt`
 
     ```bash
     conda list -e > requirements.txt
     ```
+{% endif %}
 
 ## 2. Run API
 
