@@ -21,4 +21,3 @@ dependencies:
     - pyjstat
     - sphinx
     - uvicorn
-

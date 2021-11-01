@@ -29,7 +29,7 @@ to reproduce results, and other guidelines.
 
 .. note::
    Here you might include information about this project including steps on how to
-   setup and reproduce results and findings, and other guidelines. 
+   setup and reproduce results and findings, and other guidelines.
 
 .. toctree::
    :glob:

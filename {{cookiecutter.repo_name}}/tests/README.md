@@ -6,11 +6,12 @@ common script / module under `src/` and unit tests added. The same applies for
 any other non trivial code to ensure the correct functioning.
 
 ## Run tests with `pytest`
+
 To run tests, ensure you have installed the conda environment as explained above
 (from `conda_env.yml`) and activated it.
 
-*If not, install `pytest`, `pytest-cookies`, `pytest-cov`,
-`pytest-remotedata==0.3.2` using pip or conda.*
+_If not, install `pytest`, `pytest-cookies`, `pytest-cov`,
+`pytest-remotedata==0.3.2` using pip or conda._
 
 Then from the repository root run
 
@@ -21,7 +22,7 @@ pytest tests\
 After initial repo creation, i.e. using the cookiecutter instructions,
 the result of running this should display the following in terminal:
 
-```python
+```
 <your-root-parent-dir>/{{cookiecutter.repo_name}}>pytest tests\
 ========================================== test session starts ==========================================
 platform win32 -- Python 3.8.6, pytest-5.4.3, py-1.9.0, pluggy-0.13.1
@@ -46,9 +47,10 @@ FAILED tests/test_randomtests.py::test_that_fails - AssertionError: We expected 
 ====================================== 1 failed, 7 passed in 0.55s ======================================
 ```
 
-*Note that `<your-root-parent-dir>` willl be replaced by your repos parent directory.*
+_Note that `<your-root-parent-dir>` willl be replaced by your repos parent directory._
 
 ## Run tests and display test coverage
+
 To display test coverage of all source code in the folder `src/` run from repository root
 
 ```bash
@@ -58,7 +60,7 @@ pytest --cov-report term-missing --cov=src tests\
 After initial repo creation, i.e. using the cookiecutter instructions,
 the result of running this should display the following in terminal:
 
-```python
+```
 <your-root-parent-dir>/{{cookiecutter.repo_name}}>pytest --cov-report term-missing --cov=src tests\
 ========================================== test session starts ==========================================
 platform win32 -- Python 3.8.6, pytest-5.4.3, py-1.9.0, pluggy-0.13.1
@@ -96,8 +98,8 @@ FAILED tests/test_randomtests.py::test_that_fails - AssertionError: We expected 
 The term `--cov-report term-missing` will show which lines of each `.py`-file in `src/`
 that are not covered by tests.
 
-
 ## References
+
 - [realpython - Getting Started With Testing in Python](https://realpython.com/python-testing/)
 - [realpython - Effective Python testing with `pytest`](https://realpython.com/pytest-python-testing/)
 - [`pytest-cov` docs](https://pytest-cov.readthedocs.io/en/latest/readme.html#documentation)
