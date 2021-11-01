@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "data_science_template"
+version = "0.1.0"
+description = ""
+authors = ["tobiasbj <tobias.bjormyr@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+pre-commit = "^2.15.0"
+
+[tool.black]
+py36 = true
+include = '\.pyi?$'
+exclude = '''
+/(
+\.git
+| \.hg
+| \.mypy_cache
+| \.tox
+| \.venv
+| \_build
+| buck-out
+| build
+| dist
+# The following are specific to Black, you probably don't want those.
+| blib2to3
+| tests/data
+)/
+'''
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
