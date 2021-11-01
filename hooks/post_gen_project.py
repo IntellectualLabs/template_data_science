@@ -1,5 +1,6 @@
 # import datetime
 import os
+
 # import shutil
 # from os.path import join
 
@@ -15,7 +16,7 @@ def replace_contents(filename: str, what: str, replacement: str) -> None:
     """
     with open(filename) as fh:
         changelog = fh.read()
-    with open(filename, 'w') as fh:
+    with open(filename, "w") as fh:
         fh.write(changelog.replace(what, replacement))
 
 
@@ -23,12 +24,13 @@ if __name__ == "__main__":
     # today = datetime.date.today()
     # replace_contents('LICENSE', '<YEAR>', today.strftime("%Y"))
 
-    if '{{ cookiecutter.open_source_license }}' == "Not open source":
-        os.remove('LICENSE')
+    if "{{ cookiecutter.open_source_license }}" == "Not open source":
+        os.remove("LICENSE")
         # shutil.rmtree('LICENSE')
 
     # Print out some information on setup and next steps
-    print("""
+    print(
+        """
 
 Data Science Project '{{ cookiecutter.repo_name }}' created using the following
 parameters:
@@ -47,4 +49,5 @@ commands (substitute REMOTE-REPOSITORY-URL with the remote repository url).
     git commit -m "Initial commit"
     git remote add origin REMOTE-REPOSITORY-URL
     git push -u origin master
-""")
+"""
+    )
