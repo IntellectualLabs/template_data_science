@@ -6,7 +6,7 @@ from IPython.core.display import HTML
 
 app = Flask(__name__, static_url_path="/static")
 app.debug = False
-graph_dict = dict()
+graph_dict: dict = dict()
 
 
 @app.route("/", methods=["GET", "POST"])
