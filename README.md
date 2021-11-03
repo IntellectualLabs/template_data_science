@@ -28,6 +28,8 @@ Then generate a new project for your own use based upon the template, answering 
 
 ```bash
 cookiecutter https://github.com/IntellectualLabs/data_science_template
+# To specify which branch yoy want to use:
+# cookiecutter https://github.com/IntellectualLabs/data_science_template --checkout develop
 ```
 
 The values you are prompted for are:

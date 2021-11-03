@@ -27,10 +27,11 @@ if __name__ == "__main__":
     if "{{ cookiecutter.open_source_license }}" == "Not open source":
         os.remove("LICENSE")
         # shutil.rmtree('LICENSE')
-    if '{{ cookiecutter.python_package_manager}}' == "conda":
-        os.remove('pyproject.toml')
-    elif '{{ cookiecutter.python_package_manager}}' == "poetry":
-        os.remove('conda_env.yml')
+    if "{{ cookiecutter.python_package_manager}}" == "conda":
+        # os.remove('pyproject.toml')
+        pass
+    elif "{{ cookiecutter.python_package_manager}}" == "poetry":
+        os.remove("conda_env.yml")
 
     # Print out some information on setup and next steps
     print(
