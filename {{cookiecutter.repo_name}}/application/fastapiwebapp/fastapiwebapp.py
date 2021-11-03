@@ -4,6 +4,7 @@ This is the {{cookiecutter.package_name}} API documentation.
 
 # Import standard modules
 import time
+from typing import Dict, List, Optional, Set, Tuple
 
 # Import 3rd party modules
 from fastapi import FastAPI
@@ -39,7 +40,7 @@ def read_root():
 
 
 @app.get("/hello")
-def hello_app(name: str = None):
+def hello_app(name: str = "None") -> dict:
     """
 
     Arguments:
@@ -53,7 +54,7 @@ def hello_app(name: str = None):
     - hello_generic : str
     """
     time.sleep(0.5)
-    hello_back = "Hello " + name + " from {{cookiecutter.package_name}}"
+    hello_back: str = "Hello " + name + " from {{cookiecutter.package_name}}"
     hello_generic = hello_world()
 
     return {"reply": hello_back, "reply_world": hello_generic}
