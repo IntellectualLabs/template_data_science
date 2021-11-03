@@ -1,4 +1,4 @@
-﻿from os import listdir
+from os import listdir
 from os.path import isfile, join
 
 from flask import Flask, render_template
