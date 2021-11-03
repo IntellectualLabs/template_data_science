@@ -57,13 +57,13 @@ repos:
     rev: v2.29.0
     hooks:
       - id: pyupgrade
-  - repo: https://github.com/Yelp/detect-secrets
-    # detect-secrets scan > .secrets.baseline
-    rev: v1.1.0
-    hooks:
-      - id: detect-secrets
-        args: ["--baseline", ".secrets.baseline"]
-        exclude: poetry.lock
+  # - repo: https://github.com/Yelp/detect-secrets
+  #   # detect-secrets scan > .secrets.baseline
+  #   rev: v1.1.0
+  #   hooks:
+  #     - id: detect-secrets
+  #       args: ["--baseline", ".secrets.baseline"]
+  #       exclude: poetry.lock
   - repo: https://github.com/kynan/nbstripout
     rev: 0.5.0
     hooks:
