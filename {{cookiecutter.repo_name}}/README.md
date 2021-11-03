@@ -12,8 +12,8 @@ _Explain the purpose of your repository/project here_
 <!-- TOC -->
 
 - [{{cookiecutter.project_name}}](#cookiecutterproject_name)
-  - [1. Setup](#1-setup){% if cookiecutter.python_package_manager == 'poetry' %}
-      - [1.1 Installation issues](#121-installation-issues){% endif %}
+  - [1. Setup](#1-setup)
+    - [1.1 Installation issues](#11-installation-issues)
   - [2. Run API](#2-run-api)
     - [2.1. Option 1: Run API locally](#21-option-1-run-api-locally)
     - [2.2. Option 2: Run API in docker](#22-option-2-run-api-in-docker)
@@ -24,19 +24,21 @@ _Explain the purpose of your repository/project here_
   <!-- /TOC -->
 
 ## 1. Setup
+
+(For the precommit hooks used in this template see: `precommit.md`.)
 {% if cookiecutter.python_package_manager == 'poetry' %}
-*The setup shows how to set up your environment with the `poetry` python package manager*.
+_The setup shows how to set up your environment with the `poetry` python package manager_.
 
 1. Install git and checkout the [git code repository](https://github.com/IntellectualLabs/template_data_science/).
 2. Install [Poetry]: <https://python-poetry.org/docs/#installation>
 3. Change working directory into the git code repository root
 4. Create the self contained environment;
 
-   - *(If the config file `pyproject.toml` does not exist, initialize the environment file `poetry init`.)*
+   - _(If the config file `pyproject.toml` does not exist, initialize the environment file `poetry init`.)_
    - Create the env `poetry install`
    - Activate poetry shell `poetry shell`
    - Add packages by `poetry add <package>`.
-     - add package as dev package `--dev (-D)`, e.g. `poetry add -D ipykernel` (*already included*)
+     - add package as dev package `--dev (-D)`, e.g. `poetry add -D ipykernel` (_already included_)
      - install without dev dependencies `poetry install --no-dev`
    - Update `poetry.lock` without upgrading dependencies: `poetry lock --no-update`
 
@@ -47,9 +49,9 @@ _Explain the purpose of your repository/project here_
   - Or try upgrading your poetry version: `poetry self update`
 
 {% elif cookiecutter.python_package_manager == 'conda' %}
-*The setup shows how to set up your environment with the `conda` python package manager*.
+_The setup shows how to set up your environment with the `conda` python package manager_.
 
-1. Install git and checkout the [git code repository](https://github.com/IntellectualLabs/template_data_science/).
+1.  Install git and checkout the [git code repository](https://github.com/IntellectualLabs/template_data_science/).
 2.  Install [anaconda] python version 3.8+
 3.  Change working directory into the git code repository root
 4.  Create the self contained conda environment;
@@ -90,12 +92,13 @@ _Explain the purpose of your repository/project here_
 
     ```
 
-6.  (*Optional*) Update `requirements.txt`
+6.  (_Optional_) Update `requirements.txt`
 
-    ```bash
-    conda list -e > requirements.txt
-    ```
-{% endif %}
+        ```bash
+        conda list -e > requirements.txt
+        ```
+
+    {% endif %}
 
 ## 2. Run API
 
