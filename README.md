@@ -8,6 +8,8 @@ a starting point and changed based upon the working and evolution of your projec
 
 This template builds upon the [data science template provided by Equinor](https://github.com/equinor/data-science-template), which in turn builds on a [Cookiecutter template](http://cookiecutter.readthedocs.org/en/latest/installation.html).
 
+(For the precommit hooks used in this template see: `precommit.md`.)
+
 ## Getting Started With This Template
 
 This template is provided as a [Cookiecutter template](http://cookiecutter.readthedocs.org/en/latest/installation.html) so you
@@ -30,15 +32,15 @@ cookiecutter https://github.com/IntellectualLabs/data_science_template
 
 The values you are prompted for are:
 
-| Value               | Description                                                         |
-| :------------------ | ------------------------------------------------------------------- |
-| project_name        | A name for your project. Used mostly within documentation           |
-| project_description | A description to include in the README.md                           |
-| repo_name           | The name of the github repository where the project will be held    |
-| package_name        | A name for the generated python package.                            |
-| author              | The main author of the solution. Included in the setup.py file      |
-| python_package_manager | Which Python package manager to use ("conda" or "poetry")        |
-| open_source_license | What type of open source license the project will be released under |
+| Value                  | Description                                                         |
+| :--------------------- | ------------------------------------------------------------------- |
+| project_name           | A name for your project. Used mostly within documentation           |
+| project_description    | A description to include in the README.md                           |
+| repo_name              | The name of the github repository where the project will be held    |
+| package_name           | A name for the generated python package.                            |
+| author                 | The main author of the solution. Included in the setup.py file      |
+| python_package_manager | Which Python package manager to use ("conda" or "poetry")           |
+| open_source_license    | What type of open source license the project will be released under |
 
 If you are uncertain about what to enter for any value then just accept the defaults.
 You can always change the generated project later.
