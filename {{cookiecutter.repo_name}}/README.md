@@ -14,6 +14,7 @@ _Explain the purpose of your repository/project here_
 - [{{cookiecutter.project_name}}](#cookiecutterproject_name)
   - [1. Setup](#1-setup)
     - [1.1 Installation issues](#11-installation-issues)
+    - [Precommit](#precommit)
   - [2. Run API](#2-run-api)
     - [2.1. Option 1: Run API locally](#21-option-1-run-api-locally)
     - [2.2. Option 2: Run API in docker](#22-option-2-run-api-in-docker)
@@ -25,7 +26,6 @@ _Explain the purpose of your repository/project here_
 
 ## 1. Setup
 
-(For the precommit hooks used in this template see: `precommit.md`.)
 {% if cookiecutter.python_package_manager == 'poetry' %}
 _The setup shows how to set up your environment with the `poetry` python package manager_.
 
@@ -99,6 +99,10 @@ _The setup shows how to set up your environment with the `conda` python package 
         ```
 
     {% endif %}
+
+### Precommit
+
+Install precommit hooks according to `precommit.md`.
 
 ## 2. Run API
 
