@@ -3,6 +3,7 @@ import os
 import sys
 
 import pytest
+from myproj import timing_utils
 
 # Explicitly set path so don't need to run setup.py - if we have multiple
 # copies of the code we would otherwise need to setup a separate environment
@@ -10,8 +11,6 @@ import pytest
 sys.path.insert(
     0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "src"))
 )  # noqa
-
-from myproj import timing_utils
 
 
 def test_setup_logger():
