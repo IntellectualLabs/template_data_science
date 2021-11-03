@@ -50,7 +50,6 @@ LABEL maintainer="{{cookiecutter.author}}"
 # Expose app.py in port 80
 EXPOSE 80
 CMD uvicorn app:app --host 0.0.0.0 --port 80
-
 {% elif cookiecutter.python_package_manager == 'poetry' %}
 # The Docker image default will expose the app in application/app.py
 # through port 80. The docker image will
@@ -99,5 +98,4 @@ LABEL maintainer="{{cookiecutter.author}}"
 # Expose app.py in port 80
 EXPOSE 80
 CMD uvicorn app:app --host 0.0.0.0 --port 80
-
 {% endif %}
