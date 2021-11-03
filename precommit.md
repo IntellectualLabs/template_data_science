@@ -2,8 +2,11 @@
 
 ## Setup
 
-- `pip install pre-commit`
+- `pip install pre-commit` (already installed in poetry env by default)
 - Install the git hook scripts in `.pre-commit-config.yaml`: `pre-commit install`
+- detect secrets setup
+  - `detect-secrets scan > .secrets.baseline`
+- auto update: `pre-commit autoupdate`
 
 ### Setup from scratch (without code already existing in this repo)
 
