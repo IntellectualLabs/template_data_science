@@ -33,6 +33,7 @@ repos:
     rev: "4.0.1" # pick a git hash / tag to point to
     hooks:
       - id: flake8
+        additional_dependencies: [flake8-isort]
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: "v2.4.1" # Use the sha or tag you want to point at
     hooks:
@@ -41,7 +42,7 @@ repos:
     rev: 5.9.3
     hooks:
       - id: isort
-        args: ["--profile", "black"]
+        # args: ["--profile", "black"] # covered in pyproject.toml
   - repo: https://github.com/econchick/interrogate
     rev: 1.5.0
     hooks:
