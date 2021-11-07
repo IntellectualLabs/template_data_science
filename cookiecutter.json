@@ -7,6 +7,6 @@
     "python_package_manager": ["poetry", "conda"],
     "open_source_license": ["Not open source", "MIT", "LGPL3", "GPL3"],
     "_copy_without_render": [
-        "{{cookiecutter.repo_name}}/.github/*"
+        "*/.github/*"
     ]
 }
